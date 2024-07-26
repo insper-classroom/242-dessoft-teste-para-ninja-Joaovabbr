@@ -83,8 +83,8 @@ def jogo(tela):
         
         if time.get_ticks() - tempo_inicial >= config.TEMPO or config.VIDAS == 0:
            running= False
-           return config.FIM
+           decorrido = time.get_ticks() - tempo_inicial
+           restante = (config.TEMPO - decorrido) / 1000
+           return config.FIM, restante
         pygame.display.flip()
         clock.tick(config.FPS)
-
-    return config.FIM

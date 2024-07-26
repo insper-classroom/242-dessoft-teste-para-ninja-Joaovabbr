@@ -14,6 +14,6 @@ while estado != config.SAIR:
     if estado == config.INICIO:
         estado = inicio(tela)
     elif estado == config.JOGO:
-        estado = jogo(tela)
+        estado, restante = jogo(tela)
     elif estado == config.FIM:
-        estado = fim(tela)
+        estado = fim(tela, restante)
